@@ -35,6 +35,7 @@ function App() {
 
 
       <button onClick={async () => {
+        await window.ethereum.enable()
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const signedMessage = await signer.signMessage(ethers.utils.arrayify(messageHash))
