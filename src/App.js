@@ -37,7 +37,7 @@ function App() {
       <button onClick={async () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
-        const signedMessage = await signer.signMessage(ethers.utils.arrayify(MessageHash))
+        const signedMessage = await signer.signMessage(ethers.utils.arrayify(messageHash))
         setMessage(signedMessage)
       }
       }>Sign NFT Issue</button>
